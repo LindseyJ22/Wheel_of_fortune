@@ -17,22 +17,32 @@ class Game {
 		console.log(this.phrase);
 	}//ends constructor
 	  checkWin(){
-    if (this.correctLetters.length == this.phraseLetters.length) {
-      alert('You win!');
-    }
-    else {
-      this.guessLetter();
-    }
+    	if (this.correctLetters.length == this.phraseLetters.length) {
+      		alert('You win!');
+        }
+    	else {
+      		this.guessLetter();
+    	}
   } // End of checkWin method
 
   displayPhrase(){
   	let newPhrase = this.phrase;
   	console.log(newPhrase);
   	for (var i = 0; i < newPhrase.length; i++) {
-  	let sentence = newPhrase[i];
-  	// $('#display').append(sentence)
+   		 $('#box' + (i + 1)).attr('data-letter', newPhrase[i]);
+   		 if ($('#box' + (i + 1)).attr('data-letter') === null){
+   		 	$('#box' + (i + 1)).show();
+   		 }
+   		 else{
+   		 	$('#box' + (i + 1)).hide();
+   		 }
+   		
+
   	}	
   }//ends displayPhrase
+  displayLetter(){
+
+  }
 
   guessLetter(){
     let letter = prompt('Guess a letter!');
