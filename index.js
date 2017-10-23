@@ -2,10 +2,11 @@ $(function(){
 class Game {
 	constructor(){
 		this.puzzles = [
-			"Batman And Robin", 
-			"The Great Gatsby",
-			"Naggers",
+			// "Batman And Robin", 
+			// "The Great Gatsby",
+			"cat",
 			];
+
 		this.phrase = this.puzzles[Math.floor(Math.random() * this.puzzles.length)].split('');
 		this.correctLetters = [];
 		this.phraseLetters =  this.phrase.filter(function(elem, index, self) 
@@ -22,11 +23,16 @@ class Game {
     else {
       this.guessLetter();
     }
-  } // End of checkIfWon method
+  } // End of checkWin method
 
-  displayClue(){
-
-  }
+  displayPhrase(){
+  	let newPhrase = this.phrase;
+  	console.log(newPhrase);
+  	for (var i = 0; i < newPhrase.length; i++) {
+  	let sentence = newPhrase[i];
+  	// $('#display').append(sentence)
+  	}	
+  }//ends displayPhrase
 
   guessLetter(){
     let letter = prompt('Guess a letter!');
@@ -51,5 +57,6 @@ class Game {
 
 }
 let game = new Game();
+game.displayPhrase();
 game.checkWin();
 });//ends on load function//
