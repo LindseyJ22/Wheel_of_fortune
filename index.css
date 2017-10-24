@@ -8,3 +8,15 @@
 	border:3px solid black;
 	margin: 10px;
 }
+.abcs {
+	width: 30px;
+	height: 30px;
+	background: beige;
+	font-size: 1em;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid black;
+	margin: .5%;
+	position: absolute;
+	top: 150px;
+}
