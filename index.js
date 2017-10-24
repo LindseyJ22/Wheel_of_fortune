@@ -10,6 +10,8 @@ class Game {
 			{phrase: "KERMIT", hint: "What piggies love"},
 			{phrase: "YODA", hint: "Wise beyond his years he is"}
 			];
+		this.round = 0;
+			
 			// this.startGame();
 	}//ends constructor
 
@@ -40,9 +42,14 @@ class Game {
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
       		$('#alertWin').show();
-      		// this.startGame();
+      		this.round += 1;
+      		this.displayRound();
         }
     } // End of checkWin method
+
+    displayRound(){
+    	$('#roundTracker').html(this.round);
+    }
 
 	displayPhrase(){
   		let newPhrase = this.splitPhrase;
@@ -53,6 +60,7 @@ class Game {
   		}
   		$('#hints').html(this.hint);	
   	}//ends displayPhrase
+  	
   	displayLetters(){
         $('#letters-display').empty();
 
@@ -64,6 +72,7 @@ class Game {
         	}
       	}
 	}
+ 	
  	guessLetter(letter){
   		if(this.correctLetters.includes(letter) || this.incorrectLetters.includes(letter)){
           alert("You've already guessed that letter!");
@@ -90,14 +99,17 @@ class Game {
         this.loseGame();
         this.checkWin();
     }//ends guess letter method
+    
     loseGame(){
     	if(this.incorrectLetters.length === 5){
     		$('#alertLoss').show();
     	}
     }//ends loseGame
+   
     displayGuesses(){
     	$('#guessesLeft').html(this.guesses);
     }//ends displayGuesses
+    
     solveThePuzzle(){
     	let solve = prompt('Solve the Puzzle!').toUpperCase();
     	console.log(this.solvedArray);
