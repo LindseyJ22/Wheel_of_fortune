@@ -3,8 +3,12 @@ class Game {
 	constructor(){
 		this.puzzles = [
 			{phrase: "BATMAN", hint: "The dark Knight"}, 
-			{phrase: "CHRISTMAS", hint: "a time when the bells jingle"},
-			{phrase: "CATS", hint: "Kind of a terrible musical"}
+			{phrase: "CHRISTMAS", hint: "A time when the bells jingle"},
+			{phrase: "CATS", hint: "Kind of a terrible musical"},
+			{phrase: "NAGGERS", hint: "People who annoy you"},
+			{phrase: "DANGER", hint: "It's my middle name"},
+			{phrase: "KERMIT", hint: "What piggies love"},
+			{phrase: "YODA", hint: "Wise beyond his years he is"}
 			];
 		this.guesses = 5;
 		this.guessedLetters = [];
