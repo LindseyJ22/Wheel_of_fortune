@@ -40,7 +40,7 @@ class Game {
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
       		$('#alertDisplay').show();
-      		this.startGame();
+      		// this.startGame();
         }
     } // End of checkWin method
 
@@ -104,7 +104,7 @@ class Game {
     	console.log(this.solvedArray);
     	console.log(this.phrase);
     	if(solve === this.phrase){
-    		alert(' You Win');
+    		$('#alertDisplay').show();
     	}
     }
 	 		
@@ -114,12 +114,15 @@ $(function(){
       let letter = $(this).data('letter');
       game.guessLetter(letter.toUpperCase());
   	});
-  	$('#solvePuzzle').on('click',function(){
+  	$('#solvePuzzle').on('click', function(){
   		game.solveThePuzzle();
+  	});
+  	$('#startRound').on('click', function(){
+  		game.startGame();
+  		$('#alertDisplay').hide();
   	});
 	let game = new Game();
 	game.startGame();
 	game.displayLetters();
-	// game.displayPhrase();
 	game.displayGuesses();
 });//ends on load function//
