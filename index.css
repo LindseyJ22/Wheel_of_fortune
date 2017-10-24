@@ -114,3 +114,9 @@ body{
     left: 269px;
     top: 410px;
 }
+#alertDisplay{
+	width: 300px;
+    position: relative;
+    left: 600px;
+    display: none;
+}

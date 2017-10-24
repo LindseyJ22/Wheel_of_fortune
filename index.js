@@ -39,7 +39,7 @@ class Game {
 
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
-      		alert('You win!');
+      		
       		this.startGame();
         }
     } // End of checkWin method
