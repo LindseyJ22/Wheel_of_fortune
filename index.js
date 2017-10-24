@@ -21,9 +21,9 @@ class Game {
 	checkWin(){
     	if (this.correctLetters.length == this.phrase.length) {
       		alert('You win!');
+      		location.reload();
         }
-    	
-  	} // End of checkWin method
+    } // End of checkWin method
 
 	displayPhrase(){
   		let newPhrase = this.phrase;
