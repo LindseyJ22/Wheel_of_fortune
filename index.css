@@ -21,7 +21,7 @@
 }
 #hints{
 	position: relative;
-	top: 308px;
+	top: 295px;
 	border-radius: 5px;
 	height: 50px;
     width: 300px;
@@ -30,7 +30,8 @@
     background: black;
     color: white;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    font-family: cursive;
 
 }
 #guessesLeft{
@@ -41,8 +42,8 @@
     text-align: center;
     padding: 10px;
     position: relative;
-    left: 1338px;
-    top: 219px
+    left: 1313px;
+    top: 188px
 }
 .container{
 	/*width: 400px;*/
@@ -65,4 +66,51 @@ body{
 }
 #letters-display{
 	width: 800px;
+}
+#guessesText{
+	position: relative;
+    left: 1283px;
+    color: white;
+    top: 190px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+#hintsText{
+	color: white;
+	position: relative;
+    top: 294px;
+    text-align: center;
+    font-family: cursive;
+    font-weight: bolder;
+}
+.btn {
+  background: #ff0f0f;
+  background-image: -webkit-linear-gradient(top, #ff0f0f, #c40e0e);
+  background-image: -moz-linear-gradient(top, #ff0f0f, #c40e0e);
+  background-image: -ms-linear-gradient(top, #ff0f0f, #c40e0e);
+  background-image: -o-linear-gradient(top, #ff0f0f, #c40e0e);
+  background-image: linear-gradient(to bottom, #ff0f0f, #c40e0e);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffff57;
+  background-image: -webkit-linear-gradient(top, #ffff57, #d1e000);
+  background-image: -moz-linear-gradient(top, #ffff57, #d1e000);
+  background-image: -ms-linear-gradient(top, #ffff57, #d1e000);
+  background-image: -o-linear-gradient(top, #ffff57, #d1e000);
+  background-image: linear-gradient(to bottom, #ffff57, #d1e000);
+  text-decoration: none;
+}
+#solvePuzzle{
+	position: absolute;
+    left: 269px;
+    top: 410px;
 }
