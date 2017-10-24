@@ -114,9 +114,19 @@ body{
     left: 269px;
     top: 410px;
 }
-#alertDisplay{
+#alertWin{
 	width: 300px;
-    position: relative;
-    left: 600px;
     display: none;
+    position: absolute;
+    top: 50px;
+    left: 700px;
+
+}
+#alertLoss{
+	width: 300px;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 700px;
+
 }

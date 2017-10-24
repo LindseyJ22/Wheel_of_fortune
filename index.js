@@ -39,7 +39,7 @@ class Game {
 
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
-      		$('#alertDisplay').show();
+      		$('#alertWin').show();
       		// this.startGame();
         }
     } // End of checkWin method
@@ -92,8 +92,7 @@ class Game {
     }//ends guess letter method
     loseGame(){
     	if(this.incorrectLetters.length === 5){
-    		alert('you suck');
-    		this.startGame();
+    		$('#alertLoss').show();
     	}
     }//ends loseGame
     displayGuesses(){
@@ -104,7 +103,7 @@ class Game {
     	console.log(this.solvedArray);
     	console.log(this.phrase);
     	if(solve === this.phrase){
-    		$('#alertDisplay').show();
+    		$('#alertWin').show();
     	}
     }
 	 		
@@ -119,7 +118,11 @@ $(function(){
   	});
   	$('#startRound').on('click', function(){
   		game.startGame();
-  		$('#alertDisplay').hide();
+  		$('#alertWin').hide();
+  	});
+  	$('#startNewGame').on('click', function(){
+  		location.reload();
+  		$('#alertLoss').hide();
   	});
 	let game = new Game();
 	game.startGame();
