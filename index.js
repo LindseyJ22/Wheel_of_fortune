@@ -1,35 +1,54 @@
 
 class Game {
 	constructor(){
-		this.guesses = 5;
 		this.puzzles = [
 			{phrase: "BATMAN", hint: "The dark Knight"}, 
-			{phrase: "CHRISTMAS", hint: "a time when the bells jingle"},
-			{phrase: "CATS", hint: "Kind of a terrible musical"}
+			{phrase: "CHRISTMAS", hint: "A time when the bells jingle"},
+			{phrase: "CATS", hint: "Kind of a terrible musical"},
+			{phrase: "NAGGERS", hint: "People who annoy you"},
+			{phrase: "DANGER", hint: "It's my middle name"},
+			{phrase: "KERMIT", hint: "What piggies love"},
+			{phrase: "YODA", hint: "Wise beyond his years he is"}
 			];
+			// this.startGame();
+	}//ends constructor
+
+	startGame(){
+		this.guesses = 5;
 		this.guessedLetters = [];
     	this.incorrectLetters = [];
 		this.abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 		let randomNumber = Math.floor(Math.random() * this.puzzles.length);
-		this.phrase = this.puzzles[randomNumber].phrase.split('');
+		this.phrase = this.puzzles[randomNumber].phrase;
+		this.splitPhrase = this.puzzles[randomNumber].phrase.split('');
 		this.hint = this.puzzles[randomNumber].hint.split('');
 		this.correctLetters = [];
 		console.log(this.puzzles);
 		console.log(this.phrase);
-	}//ends constructor
+		this.resetGame();
+		this.displayPhrase();
+	}
 
-	checkWin(){
-    	if (this.correctLetters.length == this.phrase.length) {
-      		alert('You win!');
-        }
-    	
-  	} // End of checkWin method
-
-	displayPhrase(){
-  		let newPhrase = this.phrase;
+	resetGame(){
+		let newPhrase = this.splitPhrase;
   		console.log(newPhrase);
   		for (var i = 0; i < newPhrase.length; i++) {
-  			$("#box-container").append(`<div class="col-1 boxes" id="box${i}"></div>`)
+  			$("#box-container").empty();
+  		}	
+	}
+
+	checkWin(){
+    	if (this.correctLetters.length == this.splitPhrase.length) {
+      		$('#alertDisplay').show();
+      		// this.startGame();
+        }
+    } // End of checkWin method
+
+	displayPhrase(){
+  		let newPhrase = this.splitPhrase;
+  		console.log(newPhrase);
+  		for (var i = 0; i < newPhrase.length; i++) {
+  			$("#box-container").append(`<div class="col-1 w-50 boxes" id="box${i}"></div>`);
 
   		}
   		$('#hints').html(this.hint);	
@@ -50,9 +69,9 @@ class Game {
           alert("You've already guessed that letter!");
      		// this.guessLetter();
         }else{
-        	if(this.phrase.includes(letter)){
+        	if(this.splitPhrase.includes(letter)){
         		let indexes = [];
-        		for(let i = 0; i < this.phrase.length; i++){
+        		for(let i = 0; i < this.splitPhrase.length; i++){
         		  if(this.phrase[i] === letter)
         		  	indexes.push(i);
         		}
@@ -74,21 +93,36 @@ class Game {
     loseGame(){
     	if(this.incorrectLetters.length === 5){
     		alert('you suck');
+    		this.startGame();
     	}
-    }
+    }//ends loseGame
     displayGuesses(){
     	$('#guessesLeft').html(this.guesses);
+    }//ends displayGuesses
+    solveThePuzzle(){
+    	let solve = prompt('Solve the Puzzle!').toUpperCase();
+    	console.log(this.solvedArray);
+    	console.log(this.phrase);
+    	if(solve === this.phrase){
+    		$('#alertDisplay').show();
+    	}
     }
 	 		
 }//ends game class
 $(function(){
 	$(document).on('click', '.abcs', function(){
-      // let letter = $(this).data('letter');
       let letter = $(this).data('letter');
       game.guessLetter(letter.toUpperCase());
   	});
+  	$('#solvePuzzle').on('click', function(){
+  		game.solveThePuzzle();
+  	});
+  	$('#startRound').on('click', function(){
+  		game.startGame();
+  		$('#alertDisplay').hide();
+  	});
 	let game = new Game();
+	game.startGame();
 	game.displayLetters();
-	game.displayPhrase();
 	game.displayGuesses();
 });//ends on load function//
