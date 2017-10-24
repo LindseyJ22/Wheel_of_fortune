@@ -10,6 +10,10 @@ class Game {
 			{phrase: "KERMIT", hint: "What piggies love"},
 			{phrase: "YODA", hint: "Wise beyond his years he is"}
 			];
+			this.startGame();
+	}//ends constructor
+
+	startGame(){
 		this.guesses = 5;
 		this.guessedLetters = [];
     	this.incorrectLetters = [];
@@ -21,7 +25,7 @@ class Game {
 		this.correctLetters = [];
 		console.log(this.puzzles);
 		console.log(this.phrase);
-	}//ends constructor
+	}
 
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
