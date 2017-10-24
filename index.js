@@ -74,11 +74,12 @@ class Game {
     loseGame(){
     	if(this.incorrectLetters.length === 5){
     		alert('you suck');
+    		location.reload();
     	}
-    }
+    }//ends loseGame
     displayGuesses(){
     	$('#guessesLeft').html(this.guesses);
-    }
+    }//ends displayGuesses
 	 		
 }//ends game class
 $(function(){
