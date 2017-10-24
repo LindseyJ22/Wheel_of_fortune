@@ -1,12 +1,13 @@
 
 .boxes{
-	width: 100px;
-	height: 100px;
-	background: rgb(121,229,222);
+	height: 90px;
+	background: lawngreen;
 	text-align: center;
-	padding: 30px;
+	padding: 6px;
 	border:3px solid black;
 	margin: 10px;
+	font-size:3em;
+	font-weight: bold;
 }
 .abcs {
 	width: 30px;
@@ -16,12 +17,11 @@
 	text-align: center;
 	line-height: 30px;
 	border: 1px solid black;
-	margin: .5%;
-	position: absolute;
-	top: 150px;
 	border-radius: 50%;
 }
 #hints{
+	position: relative;
+	top: 308px;
 	border-radius: 5px;
 	height: 50px;
     width: 300px;
@@ -40,7 +40,29 @@
     border-radius: 50%;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    left: 1450px;
+    position: relative;
+    left: 1338px;
+    top: 219px
+}
+.container{
+	/*width: 400px;*/
+	position: absolute;
+    top: 500px;
+    left: 425px;
+
+}
+body{
+	background-image: url(wheel_of_fortune.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#container{
+	width: 849px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     top: 250px;
+}
+#letters-display{
+	width: 800px;
 }

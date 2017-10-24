@@ -1,17 +1,18 @@
 
 class Game {
 	constructor(){
-		this.guesses = 5;
 		this.puzzles = [
 			{phrase: "BATMAN", hint: "The dark Knight"}, 
 			{phrase: "CHRISTMAS", hint: "a time when the bells jingle"},
 			{phrase: "CATS", hint: "Kind of a terrible musical"}
 			];
+		this.guesses = 5;
 		this.guessedLetters = [];
     	this.incorrectLetters = [];
 		this.abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 		let randomNumber = Math.floor(Math.random() * this.puzzles.length);
-		this.phrase = this.puzzles[randomNumber].phrase.split('');
+		this.phrase = this.puzzles[randomNumber].phrase;
+		this.splitPhrase = this.puzzles[randomNumber].phrase.split('');
 		this.hint = this.puzzles[randomNumber].hint.split('');
 		this.correctLetters = [];
 		console.log(this.puzzles);
@@ -19,17 +20,17 @@ class Game {
 	}//ends constructor
 
 	checkWin(){
-    	if (this.correctLetters.length == this.phrase.length) {
+    	if (this.correctLetters.length == this.splitPhrase.length) {
       		alert('You win!');
       		location.reload();
         }
     } // End of checkWin method
 
 	displayPhrase(){
-  		let newPhrase = this.phrase;
+  		let newPhrase = this.splitPhrase;
   		console.log(newPhrase);
   		for (var i = 0; i < newPhrase.length; i++) {
-  			$("#box-container").append(`<div class="col-1 boxes" id="box${i}"></div>`)
+  			$("#box-container").append(`<div class="col-1 w-50 boxes" id="box${i}"></div>`)
 
   		}
   		$('#hints').html(this.hint);	
@@ -50,9 +51,9 @@ class Game {
           alert("You've already guessed that letter!");
      		// this.guessLetter();
         }else{
-        	if(this.phrase.includes(letter)){
+        	if(this.splitPhrase.includes(letter)){
         		let indexes = [];
-        		for(let i = 0; i < this.phrase.length; i++){
+        		for(let i = 0; i < this.splitPhrase.length; i++){
         		  if(this.phrase[i] === letter)
         		  	indexes.push(i);
         		}
@@ -80,13 +81,23 @@ class Game {
     displayGuesses(){
     	$('#guessesLeft').html(this.guesses);
     }//ends displayGuesses
+    solveThePuzzle(){
+    	let solve = prompt('Solve the Puzzle!').toUpperCase();
+    	console.log(this.solvedArray);
+    	console.log(this.phrase);
+    	if(solve === this.phrase){
+    		alert(' You Win');
+    	}
+    }
 	 		
 }//ends game class
 $(function(){
 	$(document).on('click', '.abcs', function(){
-      // let letter = $(this).data('letter');
       let letter = $(this).data('letter');
       game.guessLetter(letter.toUpperCase());
+  	});
+  	$('#solvePuzzle').on('click',function(){
+  		game.solveThePuzzle();
   	});
 	let game = new Game();
 	game.displayLetters();
