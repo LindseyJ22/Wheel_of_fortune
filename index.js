@@ -10,8 +10,8 @@ class Game {
 			{phrase: "KERMIT", hint: "What piggies love"},
 			{phrase: "YODA", hint: "Wise beyond his years he is"}
 			];
-		this.round = 0;
-			
+		this.round = 1;
+
 			// this.startGame();
 	}//ends constructor
 
@@ -29,6 +29,7 @@ class Game {
 		console.log(this.phrase);
 		this.resetGame();
 		this.displayPhrase();
+		this.displayRound();
 	}
 
 	resetGame(){
