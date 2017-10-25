@@ -18,13 +18,15 @@
 	line-height: 30px;
 	border: 1px solid black;
 	border-radius: 50%;
+	cursor: pointer;
+    cursor: hand;
 }
 #hints{
 	position: relative;
 	top: 295px;
 	border-radius: 5px;
 	height: 50px;
-    width: 300px;
+    width: 500px;
     padding: 10px;
     text-align: center;
     background: black;
@@ -43,7 +45,8 @@
     padding: 10px;
     position: relative;
     left: 1313px;
-    top: 188px
+    top: 188px;
+    font-weight: bolder;
 }
 .container{
 	/*width: 400px;*/
@@ -98,6 +101,8 @@ body{
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
 }
 
 .btn:hover {
@@ -108,15 +113,55 @@ body{
   background-image: -o-linear-gradient(top, #ffff57, #d1e000);
   background-image: linear-gradient(to bottom, #ffff57, #d1e000);
   text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
 }
 #solvePuzzle{
 	position: absolute;
     left: 269px;
     top: 410px;
 }
-#alertDisplay{
+#alertWin{
 	width: 300px;
-    position: relative;
-    left: 600px;
     display: none;
+    position: absolute;
+    top: 50px;
+    left: 700px;
+
+}
+#alertLoss{
+	width: 300px;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 700px;
+
+}
+#roundTracker{
+	background: lawngreen;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    left: 1311px;
+    top: 25px;
+    font-weight: bolder;
+
+}
+#roundText{
+	color: white;
+	font-family: cursive;
+	font-weight: bolder;
+    position: absolute;
+    left: 1304px;
+    top: 270px;
+}
+#alertEnd{
+	width: 500px;
+	display: none;
+	position: absolute;
+	top: 145px;
+	left: 587px;
 }

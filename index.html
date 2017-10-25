@@ -11,11 +11,11 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
   </head>
       <body>
-          <div id="container">
-              <div class="row justify-content-md-center" id="box-container">
-              </div>
-          </div>
-        <div id="hintsText">Hints</div>
+        <div id="container">
+            <div class="row justify-content-md-center" id="box-container">
+            </div>
+        </div>
+        <div id="hintsText">Hint</div>
         <div id="hints"></div>
         <div class="container">
             <div class="row justify-content-md-center" id="letters-display">
@@ -23,14 +23,34 @@
         </div>
         <div id="guessesText">Guesses Left</div>
         <div id="guessesLeft"></div>
+        <div id="roundText">Round</div>
+        <div id="roundTracker"></div>
         <button id="solvePuzzle" class="btn hover">Solve Puzzle</button>
-        <div id="alertDisplay">
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div id="alertWin">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong >Holy guacamole!</strong> Even though this game is incredibley hard, you won!
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <button type="button" class="close" data-dismiss="alert">
               <span aria-hidden="true">&times;</span>
             </button>
             <button id="startRound">Start new round</button>
+          </div>
+        </div>
+        <div id="alertLoss">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong >Bummer Dude!</strong> Not everyone can be a super smart person :(
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <button id="startNewGame">Start new Game</button>
+          </div>
+        </div>
+         <div id="alertEnd">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong >Start Dancing</strong> You won the whole game an now have a million dollars!
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <button id="endGame">End Game</button>
           </div>
         </div>
     <!-- Optional JavaScript -->
