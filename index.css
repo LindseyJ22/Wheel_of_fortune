@@ -9,6 +9,7 @@
 	font-size:3em;
 	font-weight: bold;
 }
+
 .abcs {
 	width: 30px;
 	height: 30px;
@@ -21,6 +22,7 @@
 	cursor: pointer;
     cursor: hand;
 }
+
 #hints{
 	position: relative;
 	top: 295px;
@@ -34,8 +36,8 @@
     margin-left: auto;
     margin-right: auto;
     font-family: cursive;
-
 }
+
 #guessesLeft{
 	background: lawngreen;
     height: 50px;
@@ -48,18 +50,20 @@
     top: 188px;
     font-weight: bolder;
 }
+
 .container{
 	/*width: 400px;*/
 	position: absolute;
     top: 500px;
     left: 425px;
-
 }
+
 body{
 	background-image: url(wheel_of_fortune.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 #container{
 	width: 849px;
     position: relative;
@@ -67,9 +71,11 @@ body{
     margin-right: auto;
     top: 250px;
 }
+
 #letters-display{
 	width: 800px;
 }
+
 #guessesText{
 	position: relative;
     left: 1283px;
@@ -78,6 +84,7 @@ body{
     font-family: cursive;
     font-weight: bolder;
 }
+
 #hintsText{
 	color: white;
 	position: relative;
@@ -86,6 +93,7 @@ body{
     font-family: cursive;
     font-weight: bolder;
 }
+
 .btn {
   background: #ff0f0f;
   background-image: -webkit-linear-gradient(top, #ff0f0f, #c40e0e);
@@ -116,27 +124,29 @@ body{
   cursor: pointer;
   cursor: hand;
 }
+
 #solvePuzzle{
 	position: absolute;
     left: 269px;
     top: 410px;
 }
+
 #alertWin{
 	width: 300px;
     display: none;
     position: absolute;
     top: 50px;
     left: 700px;
-
 }
+
 #alertLoss{
 	width: 300px;
     display: none;
     position: absolute;
     top: 50px;
     left: 700px;
-
 }
+
 #roundTracker{
 	background: lawngreen;
     height: 50px;
@@ -148,8 +158,8 @@ body{
     left: 1311px;
     top: 25px;
     font-weight: bolder;
-
 }
+
 #roundText{
 	color: white;
 	font-family: cursive;
@@ -158,6 +168,7 @@ body{
     left: 1304px;
     top: 270px;
 }
+
 #alertEnd{
 	width: 500px;
 	display: none;
