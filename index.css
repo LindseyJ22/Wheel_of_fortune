@@ -158,3 +158,10 @@ body{
     left: 1304px;
     top: 270px;
 }
+#alertEnd{
+	width: 500px;
+	display: none;
+	position: absolute;
+	top: 145px;
+	left: 587px;
+}

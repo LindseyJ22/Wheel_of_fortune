@@ -11,23 +11,22 @@ class Game {
 			{phrase: "YODA", hint: "Wise beyond his years he is"},
 			{phrase: "YOKO", hint: "Somebody who exterminates Beetles"},
 			{phrase: "JIBLETS", hint: "Something that turkeys have that sounds gross"},
-			{phrase: "MOIST", hint: "The grossest sounding word"}
+			{phrase: "MOIST", hint: "The grossest sounding word"},
+			// {phrase: "END", hint: "end of game"}
 
 			];
-		this.randomNumber = 0;
+		this.puzzleNumber = 0;
 		this.round = 1;
-
-			// this.startGame();
 	}//ends constructor
 
 	startGame(){
-		this.guesses = 5;
+		this.guesses = 10;
 		this.guessedLetters = [];
     	this.incorrectLetters = [];
 		this.abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-		this.phrase = this.puzzles[this.randomNumber].phrase;
-		this.splitPhrase = this.puzzles[this.randomNumber].phrase.split('');
-		this.hint = this.puzzles[this.randomNumber].hint.split('');
+		this.phrase = this.puzzles[this.puzzleNumber].phrase;
+		this.splitPhrase = this.puzzles[this.puzzleNumber].phrase.split('');
+		this.hint = this.puzzles[this.puzzleNumber].hint.split('');
 		this.correctLetters = [];
 		console.log(this.puzzles);
 		console.log(this.phrase);
@@ -46,10 +45,14 @@ class Game {
 
 	checkWin(){
     	if (this.correctLetters.length == this.splitPhrase.length) {
-      		$('#alertWin').show();
       		this.round += 1;
-      		this.randomNumber += 1;
-      		this.displayRound();
+      		if(this.round > 10){
+      			$('#alertEnd').show();
+      		}else{
+      		    $('#alertWin').show();
+      			this.puzzleNumber += 1;
+      			this.displayRound();
+      		}
         }
     } // End of checkWin method
 
@@ -107,7 +110,7 @@ class Game {
     }//ends guess letter method
     
     loseGame(){
-    	if(this.incorrectLetters.length === 5){
+    	if(this.incorrectLetters.length === 10){
     		$('#alertLoss').show();
     	}
     }//ends loseGame
@@ -141,6 +144,10 @@ $(function(){
   	$('#startNewGame').on('click', function(){
   		location.reload();
   		$('#alertLoss').hide();
+  	});
+  	$('#endGame').on('click', function(){
+  		location.reload();
+  		$('#alertEnd').hide();
   	});
 	let game = new Game();
 	game.startGame();
