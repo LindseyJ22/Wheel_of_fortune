@@ -8,8 +8,13 @@ class Game {
 			{phrase: "NAGGERS", hint: "People who annoy you"},
 			{phrase: "DANGER", hint: "It's my middle name"},
 			{phrase: "KERMIT", hint: "What piggies love"},
-			{phrase: "YODA", hint: "Wise beyond his years he is"}
+			{phrase: "YODA", hint: "Wise beyond his years he is"},
+			{phrase: "YOKO", hint: "Somebody who exterminates Beetles"},
+			{phrase: "JIBLETS", hint: "Something that turkeys have that sounds gross"},
+			{phrase: "MOIST", hint: "The grossest sounding word"}
+
 			];
+		this.randomNumber = 0;
 		this.round = 1;
 
 			// this.startGame();
@@ -20,10 +25,9 @@ class Game {
 		this.guessedLetters = [];
     	this.incorrectLetters = [];
 		this.abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-		let randomNumber = Math.floor(Math.random() * this.puzzles.length);
-		this.phrase = this.puzzles[randomNumber].phrase;
-		this.splitPhrase = this.puzzles[randomNumber].phrase.split('');
-		this.hint = this.puzzles[randomNumber].hint.split('');
+		this.phrase = this.puzzles[this.randomNumber].phrase;
+		this.splitPhrase = this.puzzles[this.randomNumber].phrase.split('');
+		this.hint = this.puzzles[this.randomNumber].hint.split('');
 		this.correctLetters = [];
 		console.log(this.puzzles);
 		console.log(this.phrase);
@@ -44,6 +48,7 @@ class Game {
     	if (this.correctLetters.length == this.splitPhrase.length) {
       		$('#alertWin').show();
       		this.round += 1;
+      		this.randomNumber += 1;
       		this.displayRound();
         }
     } // End of checkWin method
