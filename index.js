@@ -28,12 +28,13 @@ class Game {
 		this.splitPhrase = this.puzzles[this.puzzleNumber].phrase.split('');
 		this.hint = this.puzzles[this.puzzleNumber].hint.split('');
 		this.correctLetters = [];
+		this.solveArray = [];
 		console.log(this.puzzles);
 		console.log(this.phrase);
 		this.resetGame();
 		this.displayPhrase();
 		this.displayRound();
-	}
+	}//ends start game
 
 	resetGame(){
 		let newPhrase = this.splitPhrase;
@@ -41,10 +42,10 @@ class Game {
   		for (var i = 0; i < newPhrase.length; i++) {
   			$("#box-container").empty();
   		}	
-	}
+	}//ends reset game
 
 	checkWin(){
-    	if (this.correctLetters.length == this.splitPhrase.length) {
+    	if (this.correctLetters.length == this.splitPhrase.length || this.solveArray == this.phrase) {
       		this.round += 1;
       		if(this.round > 10){
       			$('#alertEnd').show();
@@ -121,10 +122,9 @@ class Game {
     
     solveThePuzzle(){
     	let solve = prompt('Solve the Puzzle!').toUpperCase();
-    	console.log(this.solvedArray);
-    	console.log(this.phrase);
     	if(solve === this.phrase){
-    		$('#alertWin').show();
+    		this.solveArray.push(solve);
+    		this.checkWin();
     	}
     }
 	 		
