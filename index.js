@@ -22,7 +22,7 @@ class Game {
 	startGame(){
 		this.guesses = 10;
 		this.guessedLetters = [];
-    	this.incorrectLetters = [];
+    this.incorrectLetters = [];
 		this.abcArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 		this.phrase = this.puzzles[this.puzzleNumber].phrase;
 		this.splitPhrase = this.puzzles[this.puzzleNumber].phrase.split('');
@@ -65,7 +65,7 @@ class Game {
   		let newPhrase = this.splitPhrase;
   		console.log(newPhrase);
   		for (var i = 0; i < newPhrase.length; i++) {
-  			$("#box-container").append(`<div class="col-1 w-50 boxes" id="box${i}"></div>`);
+  			$("#box-container").append(`<div class="col-1 w-50 boxes" id="box${i}" style='padding-left:6px;'></div>`);
 		}
   		$('#hints').html(this.hint);	
   	}//ends displayPhrase

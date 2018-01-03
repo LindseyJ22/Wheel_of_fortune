@@ -40,15 +40,15 @@
 
 #guessesLeft{
 	background: lawngreen;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    left: 1313px;
-    top: 188px;
-    font-weight: bolder;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  left: 80%;
+  top: 188px;
+  font-weight: bolder;
 }
 
 .container{
@@ -78,11 +78,11 @@ body{
 
 #guessesText{
 	position: relative;
-    left: 1283px;
-    color: white;
-    top: 190px;
-    font-family: cursive;
-    font-weight: bolder;
+  left: 75%;
+  color: white;
+  top: 190px;
+  font-family: cursive;
+  font-weight: bolder;
 }
 
 #hintsText{
@@ -127,46 +127,50 @@ body{
 
 #solvePuzzle{
 	position: absolute;
-    left: 269px;
-    top: 410px;
+  left: 269px;
+  top: 410px;
 }
 
 #alertWin{
 	width: 300px;
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 700px;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 700px;
 }
 
 #alertLoss{
 	width: 300px;
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 700px;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 700px;
+}
+
+#box{
+  padding-left: 6px;
 }
 
 #roundTracker{
 	background: lawngreen;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    left: 1311px;
-    top: 25px;
-    font-weight: bolder;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  left: 80%;
+  top: 25px;
+  font-weight: bolder;
 }
 
 #roundText{
 	color: white;
 	font-family: cursive;
 	font-weight: bolder;
-    position: absolute;
-    left: 1304px;
-    top: 270px;
+  position: relative;
+  left: 75%;
+  top: 25px;
 }
 
 #alertEnd{
@@ -175,4 +179,47 @@ body{
 	position: absolute;
 	top: 145px;
 	left: 587px;
+}
+
+.round_guesses_wrapper{
+  width: 250px;
+  height: 250px;
+  position: relative;
+  left: 67%;
+  top : -17px;
+}
+@media screen and (max-width: 1620px) {
+  .round_guesses_wrapper {
+      left: 66%;
+      top: -45px;
+  }
+}
+
+@media screen and (max-width: 1560px){
+  #letters-display{
+  width: 700px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .round_guesses_wrapper {
+      left: 64%;
+      top: -60px;
+  }
+  #box-container{
+    width: 98%;
+  } 
+}
+
+@media screen and (max-width: 1390px){
+   .round_guesses_wrapper {
+      left: 60%;
+      top: -83px;
+  }
+  #letters-display{
+  width: 535px;
+  }
+   #box-container{
+    width: 85%;
+  }
 }
